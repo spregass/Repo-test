@@ -47,7 +47,6 @@ jobs:
         ls -lart /tmp
 
 
-
         
 
     - name: Invoke Jenkins Deploy Job
