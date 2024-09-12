@@ -30,6 +30,14 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+    - name: Invoke Jenkins Deploy Job
+      uses: appleboy/jenkins-action@master
+      with:
+       url: "http://192.168.27.169:8080"
+       user: "admin"
+       token: ${{ secrets.JENKINS_TOKEN }}
+       job: "Tomcatdeployment"
+
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
       uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
